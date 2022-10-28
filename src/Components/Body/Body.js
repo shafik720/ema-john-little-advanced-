@@ -5,7 +5,7 @@ import './Body.css';
 
 const Body = () => {
     return (
-        <div>
+        <div className="body-div">
             <Product></Product>
             <Cart></Cart>
         </div>
