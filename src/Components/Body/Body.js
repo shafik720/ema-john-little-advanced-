@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb } from '../../utilities/storage';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Body.css';
@@ -16,6 +17,7 @@ const Body = () => {
     //adding value to local storage
     function addToCart(element){
         console.log(element);
+        addToDb(element.id)
     }
     return (
         <div className="body-div">
