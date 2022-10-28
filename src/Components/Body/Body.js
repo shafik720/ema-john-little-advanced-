@@ -4,12 +4,19 @@ import Product from '../Product/Product';
 import './Body.css';
 
 const Body = () => {
+
+    // getting value from api
     const[product, setProduct] = useState([]);
     useEffect(()=>{
         fetch('products.json')
         .then(res=>res.json())
         .then(data=>setProduct(data))
-    },[])
+    },[]);
+
+    //adding value to local storage
+    function addToCart(element){
+        console.log(element);
+    }
     return (
         <div className="body-div">
             <div className="left-div">
@@ -17,6 +24,7 @@ const Body = () => {
                     product.map(index=><Product
                         index = {index}
                         key = {index.id}
+                        addToCart = {addToCart}
                     ></Product>)
                 }
             </div>
