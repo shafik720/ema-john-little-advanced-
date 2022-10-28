@@ -20,7 +20,7 @@ const Cart = (props) => {
                 </div>
             </div>
             <div className="card-right">
-                <span><FontAwesomeIcon icon={faPlus} /></span>
+                <span onClick={()=>props.addToCart(props.index)} ><FontAwesomeIcon icon={faPlus} /></span>
                 <span><FontAwesomeIcon icon={faMinus} /></span>
             </div>
         </div>

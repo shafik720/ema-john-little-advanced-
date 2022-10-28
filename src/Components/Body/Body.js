@@ -65,6 +65,7 @@ const Body = () => {
                     cart.map(index=><Cart
                         index = {index}
                         key = {index.id}
+                        addToCart={addToCart}
                     ></Cart>)
                 }
             </div>
