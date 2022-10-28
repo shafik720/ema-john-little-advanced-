@@ -38,6 +38,8 @@ const Body = () => {
         }
     },[products, product])
     
+
+    // showing quantity in cart div
     let[amount, setAmount] = useState([]);
     let  quantity = 0;
     useEffect(()=>{
@@ -45,7 +47,6 @@ const Body = () => {
             quantity = quantity + element.quantity;
         }
         setAmount(quantity);
-        console.log(amount);
     },[cart])
     return (
         <div className="body-div">
@@ -63,6 +64,7 @@ const Body = () => {
                 {
                     cart.map(index=><Cart
                         index = {index}
+                        key = {index.id}
                     ></Cart>)
                 }
             </div>

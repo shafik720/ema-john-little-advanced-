@@ -3,6 +3,50 @@
 .cart-card{
     border: 2px solid darkblue;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 10px 0 5px;
     margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* .card-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+} */
+.card-right span{
+    display: block;
+    cursor: pointer;
+}
+.card-right span:hover{    
+    color: blue;
+    font-weight: 800;
+}
+
+.card-right span:first-child{
+    margin-bottom: 10px;
+}
+
+.card-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-left img{
+    width: 60px;
+    height: 60px;
+}
+.card-left p{
+    margin: 0;
+    /* padding: 5px; */
+    padding-left: 10px;
+}
+.card-left p:first-child{
+    margin-bottom: 10px;
+}
+/* .left-details{
+    display: flex;
+    flex-direction: column;
+    
+} */
