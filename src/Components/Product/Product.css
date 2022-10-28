@@ -1,4 +1,11 @@
 
+
+.cardx{
+    border: 3px solid darkblue;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
 .cardx img{
     width: 286px;
 }
