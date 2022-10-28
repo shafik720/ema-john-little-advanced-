@@ -1,10 +1,13 @@
 import React from 'react';
+import Cart from '../Cart/Cart';
+import Product from '../Product/Product';
 import './Body.css';
 
 const Body = () => {
     return (
         <div>
-            <h2>Hello  from body</h2>
+            <Product></Product>
+            <Cart></Cart>
         </div>
     );
 };
