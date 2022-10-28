@@ -11,9 +11,13 @@ function addToDb(id){
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));    
 }
 
-
+function getStoredValue(){
+    let shoppingCart = JSON.parse(localStorage.getItem('shopping-cart') || '{}');
+    return shoppingCart;
+}
 
 
 export{
-    addToDb
+    addToDb,
+    getStoredValue
 }

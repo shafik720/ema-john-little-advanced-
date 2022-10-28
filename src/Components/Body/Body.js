@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb } from '../../utilities/storage';
+import { addToDb, getStoredValue } from '../../utilities/storage';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Body.css';
@@ -15,10 +15,19 @@ const Body = () => {
     },[]);
 
     //adding value to local storage
+    const[products, setProducts] = useState([]);
     function addToCart(element){
-        console.log(element);
+        let newCart = [];
         addToDb(element.id)
+        newCart = [...products, element];
+        setProducts(newCart);
     }
+
+    //getting value from  local storage
+    useEffect(()=>{
+        let storedCart = getStoredValue();
+        console.log(storedCart);
+    },[products])
     return (
         <div className="body-div">
             <div className="left-div">
