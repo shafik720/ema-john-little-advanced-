@@ -14,7 +14,7 @@ const Body = () => {
         .then(data=>setProduct(data))
     },[]);
 
-    //adding value to local storage
+    //----------------------------------------- adding value to local storage
     const[products, setProducts] = useState([]);
     function addToCart(element){
         let newCart = [];
@@ -22,15 +22,16 @@ const Body = () => {
         newCart = [...products, element];
         setProducts(newCart);
     }
-    // decrease from storage
+    //----------------------------------------- decrease from storage
+    let [decreased, setDecreased] = useState([]);
     function decrease(element){
         let newCart = [];
         decreaseDb(element.id);
         newCart = [...products, element];
-        setProducts(newCart);
+        setDecreased(newCart);
     }
 
-    //getting value from  local storage
+    //----------------------------------------  getting value from  local storage
     const[cart, setCart]  = useState([]);
     useEffect(()=>{
         let storedCart = getStoredValue();
@@ -43,10 +44,10 @@ const Body = () => {
             }  
         setCart(freshCart);
         }
-    },[products, product])
+    },[products, product, decreased])
     
 
-    // showing quantity in cart div
+    //----------------------------------------- showing quantity in cart div
     let[amount, setAmount] = useState([]);
     let  quantity = 0;
     useEffect(()=>{

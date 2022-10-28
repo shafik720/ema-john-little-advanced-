@@ -18,8 +18,14 @@ function getStoredValue(){
 
 function decreaseDb(id){
     let shoppingCart = JSON.parse(localStorage.getItem('shopping-cart') || '{}');
-    if(shoppingCart[id] ){
-        shoppingCart[id] = shoppingCart[id] - 1;
+    if(shoppingCart[id] >= 0){
+        if(shoppingCart[id] === 0){
+            let prop = id;
+            delete shoppingCart[prop]
+        }else{
+            shoppingCart[id] = shoppingCart[id] - 1;
+        }
+                
     }
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));        
 }
