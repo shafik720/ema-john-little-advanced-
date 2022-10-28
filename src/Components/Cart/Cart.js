@@ -20,8 +20,8 @@ const Cart = (props) => {
                 </div>
             </div>
             <div className="card-right">
-                <span onClick={()=>props.addToCart(props.index)} ><FontAwesomeIcon icon={faPlus} /></span>
-                <span><FontAwesomeIcon icon={faMinus} /></span>
+                <span draggable onClick={()=>props.addToCart(props.index)} ><FontAwesomeIcon icon={faPlus} /></span>
+                <span draggable onClick={()=>props.decrease(props.index)} ><FontAwesomeIcon icon={faMinus} /></span>
             </div>
         </div>
     );

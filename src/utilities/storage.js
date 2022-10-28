@@ -16,8 +16,16 @@ function getStoredValue(){
     return shoppingCart;
 }
 
+function decreaseDb(id){
+    let shoppingCart = JSON.parse(localStorage.getItem('shopping-cart') || '{}');
+    if(shoppingCart[id] ){
+        shoppingCart[id] = shoppingCart[id] - 1;
+    }
+    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));        
+}
 
 export{
     addToDb,
+    decreaseDb,
     getStoredValue
 }

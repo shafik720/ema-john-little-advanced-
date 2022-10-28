@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getStoredValue } from '../../utilities/storage';
+import { addToDb, decreaseDb, getStoredValue } from '../../utilities/storage';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Body.css';
@@ -19,6 +19,13 @@ const Body = () => {
     function addToCart(element){
         let newCart = [];
         addToDb(element.id)
+        newCart = [...products, element];
+        setProducts(newCart);
+    }
+    // decrease from storage
+    function decrease(element){
+        let newCart = [];
+        decreaseDb(element.id);
         newCart = [...products, element];
         setProducts(newCart);
     }
@@ -66,6 +73,7 @@ const Body = () => {
                         index = {index}
                         key = {index.id}
                         addToCart={addToCart}
+                        decrease = {decrease}
                     ></Cart>)
                 }
             </div>
