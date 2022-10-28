@@ -24,10 +24,29 @@ const Body = () => {
     }
 
     //getting value from  local storage
+    const[cart, setCart]  = useState([]);
     useEffect(()=>{
         let storedCart = getStoredValue();
-        console.log(storedCart);
-    },[products])
+        let freshCart = [];
+        for(let id in storedCart){
+            let addedProduct = product.find(index=>index.id === id);
+            if(addedProduct){
+                addedProduct.quantity = storedCart[id];
+                freshCart.push(addedProduct);
+            }  
+        setCart(freshCart);
+        }
+    },[products, product])
+    
+    let[amount, setAmount] = useState([]);
+    let  quantity = 0;
+    useEffect(()=>{
+        for (let element of cart){
+            quantity = quantity + element.quantity;
+        }
+        setAmount(quantity);
+        console.log(amount);
+    },[cart])
     return (
         <div className="body-div">
             <div className="left-div">
@@ -40,7 +59,12 @@ const Body = () => {
                 }
             </div>
             <div className="right-div">
-                <Cart></Cart>
+                <h2>Product Added : {amount} </h2>
+                {
+                    cart.map(index=><Cart
+                        index = {index}
+                    ></Cart>)
+                }
             </div>
         </div>
     );
