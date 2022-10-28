@@ -3,9 +3,10 @@
 .cardx{
     border: 3px solid darkblue;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     margin: 10px;
 }
 .cardx img{
-    width: 286px;
+    width: 100%;
+    border-radius: 5px;
 }
