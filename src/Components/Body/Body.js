@@ -49,11 +49,30 @@ const Body = () => {
 
     //----------------------------------------- showing quantity in cart div
     let[amount, setAmount] = useState([]);
+    let[price, setPrice] = useState([]);
+    let[shipping, setShipping] = useState([]);
+    let[taxs, setTaxs] = useState([]);
+    let[grand, setGrand] = useState([]);
+
     let  quantity = 0;
+    let totalPrice = 0;
+    let shippingFee = 0;
+    let tax = 0;
+    let grandTotal = 0;
     useEffect(()=>{
         for (let element of cart){
             quantity = quantity + element.quantity;
+            totalPrice += (element.price * element.quantity);
+            shippingFee += (element.shipping * element.quantity);             
         }
+        tax = (totalPrice * 0.1);
+        grandTotal = (totalPrice + shippingFee + tax);
+
+
+        setPrice(totalPrice);
+        setShipping(shippingFee);
+        setTaxs(tax.toFixed(2));
+        setGrand(grandTotal);
         setAmount(quantity);
     },[cart])
     return (
@@ -68,7 +87,13 @@ const Body = () => {
                 }
             </div>
             <div className="right-div">
-                <h2>Product Added : {amount} </h2>
+                <div className="calculation">
+                <h3>Product Added : {amount} </h3>
+                <p>Total Price : {price} </p>
+                <p>Shipping Fee : {shipping} </p>
+                <p>Tax : {taxs} </p>
+                <p id="grand">Grand Total : {grand} </p>
+                </div>
                 {
                     cart.map(index=><Cart
                         index = {index}

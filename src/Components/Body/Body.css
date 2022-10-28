@@ -9,3 +9,21 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.calculation{
+    border: 3px solid blue;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 82%;
+    margin: auto;
+}
+
+.calculation p{
+    font-weight: 600;
+}
+
+#grand{
+    color: crimson;
+    font-weight: 700;
+    font-size: 18px;
+}
