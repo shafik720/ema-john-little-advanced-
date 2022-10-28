@@ -15,6 +15,9 @@ const Product = (props) => {
                 <p>Rating : {ratings} Star</p>
                 <p>Manufacturer : {seller}</p>
             </div>
+            <div className="card-bottom">
+                <h4>Add To Cart</h4>
+            </div>
         </div>
     );
 };

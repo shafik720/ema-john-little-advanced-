@@ -5,8 +5,31 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+    height: 550px;
+    position: relative;
 }
 .cardx img{
     width: 100%;
     border-radius: 5px;
+}
+
+.card-bottom{
+    position: absolute;
+    background-color: steelblue;
+    color: white;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.card-bottom:hover{
+    background-color: tomato;
 }
