@@ -33,3 +33,6 @@
 .card-bottom:hover{
     background-color: tomato;
 }
+.card-bottom span{
+    margin-left: 15px;
+}
