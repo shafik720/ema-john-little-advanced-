@@ -1,10 +1,20 @@
 import React from 'react';
 import './Product.css';
 
-const Product = () => {
+const Product = (props) => {
+    console.log(props.index);
+    let{id, img, price, seller, name, ratings} = props.index;
     return (
-        <div>
-            <h2>Hello from product</h2>
+        <div className="cardx">
+            <div className="card-img">
+                <img src={img} alt=""/>
+            </div>
+            <div className="card-body">
+                <h3>{name}</h3>
+                <h4>Price : ${price}</h4>
+                <p>Rating : {ratings} Star</p>
+                <p>Manufacturer : {seller}</p>
+            </div>
         </div>
     );
 };
